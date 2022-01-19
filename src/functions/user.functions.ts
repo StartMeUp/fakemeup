@@ -23,5 +23,7 @@ export const phone = () => {
     ?.join(" ");
 };
 
-export const avatar = (str?: string) =>
-  `https://i.pravatar.cc/300?u=${str ? str : utils.randomNumber(1, 9000000)}`;
+export const avatar = (size: number, str?: string) =>
+  `https://i.pravatar.cc/${size}?u=${
+    str ? str : utils.randomNumber(1, 9000000)
+  }`;
