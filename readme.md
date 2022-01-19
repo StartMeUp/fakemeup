@@ -21,6 +21,11 @@ npm i fakemeup -D
 ```Javascript
 import fakemeup from "fakemeup/dist"
 
+// if using require
+let fakemeup = require("fakemeup/dist");
+fakemeup = fakemeup.default;
+////////
+
 // random first Name
 fakemeup.user.firstName()
 
