@@ -70,6 +70,7 @@ fakemeup.lorem.sentence(1, 1) // returns one word, set min === max for a fixed n
 ```Javascript
 // get random photos from unsplash (no api key needed)
 fakemeup.image.random() // displays a random landscape photo 1280x720
-fakemeup.image.random("square") // 3 ratios: "square", "portrait", "landscape" (sizes are 1000x1000, 576x1024, 1280x720)
-fakemeup.image.random("portrait", "birds") // you can pass a keyword as second argument (ratio must be provided)
+fakemeup.image.random("square") // 3 preset ratios: "square", "portrait", "landscape" (sizes are 1000x1000, 576x1024, 1280x720)
+fakemeup.image.random("250x420") // or any custom size "widthxheight"
+fakemeup.image.random("portrait", "birds") // you can pass an optional keyword as second argument (ratio must be provided)
 ```
