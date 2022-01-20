@@ -1,7 +1,7 @@
 // unsplash instructions https://awik.io/generate-random-images-unsplash-without-using-api/
 
 export const random = (ratio: string = "landscape", keyword?: string) => {
-  const baseUrl = "https://source.unsplash.com/random/";
+  const baseUrl = "https://source.unsplash.com/";
   const size =
     ratio === "landscape"
       ? "1280x720"
@@ -9,12 +9,6 @@ export const random = (ratio: string = "landscape", keyword?: string) => {
       ? "1000x1000"
       : ratio === "portrait"
       ? "576x1024"
-      : ratio
-      ? ratio
-      : "";
-  if (!size)
-    throw new Error(
-      "Ratio must be passed as first argument for image.random(ratio, keyword)"
-    );
+      : ratio;
   return `${baseUrl}${size}${keyword ? "/?" + keyword : ""}`;
 };

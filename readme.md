@@ -72,5 +72,5 @@ fakemeup.lorem.sentence(1, 1) // returns one word, set min === max for a fixed n
 fakemeup.image.random() // displays a random landscape photo 1280x720
 fakemeup.image.random("square") // 3 preset ratios: "square", "portrait", "landscape" (sizes are 1000x1000, 576x1024, 1280x720)
 fakemeup.image.random("250x420") // or any custom size "widthxheight"
-fakemeup.image.random("portrait", "birds") // you can pass an optional keyword as second argument (ratio must be provided)
+fakemeup.image.random("portrait", "nature,purple") // optional, you can pass comma seperated keywords as second argument (ratio must be provided)
 ```
