@@ -14,18 +14,23 @@ install as a dev dependency
 npm i fakemeup -D
 ```
 
+ES6 import
+
+```Javascript
+import fakemeup from "fakemeup/dist"
+```
+
+Require
+
+```Javascript
+const fakemeup = require("fakemeup/dist").default;
+```
+
 # Usage
 
 ## Fake user
 
 ```Javascript
-import fakemeup from "fakemeup/dist"
-
-// if using require
-let fakemeup = require("fakemeup/dist");
-fakemeup = fakemeup.default;
-////////
-
 // random first Name
 fakemeup.user.firstName()
 
