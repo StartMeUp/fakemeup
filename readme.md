@@ -17,13 +17,19 @@ npm i fakemeup -D
 ES6 import
 
 ```Javascript
+// import default
 import fakemeup from "fakemeup/dist"
+// import individual functions
+import {user, lorem, image, address, date} from "fakemeup/dist"
 ```
 
 Require
 
 ```Javascript
+// require default
 const fakemeup = require("fakemeup/dist").default;
+// require individual functions
+const {user, lorem, image, address, date} = require("fakemeup/dist").default;
 ```
 
 # Usage
@@ -81,4 +87,32 @@ fakemeup.address.street()
 fakemeup.address.number() // between 10 and 999
 fakemeup.address.postcode() // between 10000 and 99999
 fakemeup.address.fullAddress() // totally random, eg: 23 Albert Road, 34678 New-York, Mississipi FRANCE
+```
+
+## Random dates
+
+```Javascript
+// Year
+fakemeup.date.year() // returns a random year between 1969 and now
+fakemeup.date.year(2004) // optional minYear, returns a random year between minYear and now
+fakemeup.date.year(2004, 2008) // optional minYear and maxYear, returns a random year between minYear and maxYear
+
+// Month
+fakemeup.date.month() // default, returns a random month as long string, eg: February
+fakemeup.date.month("long") // same as default above
+fakemeup.date.month("short") // returns a random month abbreviated, eg: Feb.
+fakemeup.date.month("num") // returns a random month in two digit number format, eg: 02
+
+// Day
+fakemeup.date.day() // default, returns a random day as long string, eg: Monday
+fakemeup.date.day("long") // same as default above
+fakemeup.date.day("short") // returns a random day abbreviated, eg: Mon.
+fakemeup.date.day("num") // returns a random day in two digit number format, eg: 02 - N.B. the range is between 01 and 28 to avoid silly dates like Feb 31 or April 31
+
+// Date
+fakemeup.date.full() // returns a whole date, eg: Sat Oct 08 2022, between 1969 and now by default
+fakemeup.date.full("full") // same as above
+fakemeup.date.full("slash") // returns date with slashes, eg: 12/3/2004
+fakemeup.date.full("dash") //returns date with dashes, eg: 2019-09-17
+fakemeup.date.full("dash", 2005, 2006) // optional, you can pass minYear and maxYear as arguments, eg: 2006-11-10
 ```
