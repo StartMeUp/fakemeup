@@ -106,4 +106,22 @@ fakemeup.date.full("full") // same as above
 fakemeup.date.full("slash") // returns date with slashes, eg: 12/3/2004
 fakemeup.date.full("dash") //returns date with dashes, eg: 2019-09-17
 fakemeup.date.full("dash", 2005, 2006) // optional, you can pass minYear and maxYear as arguments, eg: 2006-11-10
+
+// custom Date function
+// const custom = (
+//  format: "YMd" | "dMY" | "MdY" | "ddMY" = "dMY",
+//  separator: string = " ",
+//  opt?: {
+//    minYear?: number;
+//    maxYear?: number;
+//    day?: "long" | "short" | "num";
+//    month?: "long" | "short" | "num";
+//  }
+// ) => ...
+fakemeup.date.custom() // => 27 November 2011
+fakemeup.date.custom("YMd") // => 2013 December 05
+fakemeup.date.custom("dMY", " ", { month: "short" }) // => 13 Apr. 1985
+fakemeup.date.custom("ddMY") // => Monday 05 February 2018
+fakemeup.date.custom("YMd", "-", { minYear: 2003, maxYear: 2005, month: "num" }) // => 2004-03-13
+
 ```

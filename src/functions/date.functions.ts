@@ -1,6 +1,8 @@
 import * as dateData from "../data/date.data";
 import * as utils from "./utils.functions";
 
+type lengthT = "long" | "short" | "num";
+
 export const year = (
   min: number = 1969,
   max: number = new Date().getFullYear()
@@ -13,10 +15,10 @@ const makeDate = (minYear?: number, maxYear?: number) =>
     utils.randomNumber(1, 28)
   );
 
-export const day = (length: "long" | "short" | "num" = "long"): string =>
+export const day = (length: lengthT = "long"): string =>
   utils.randomArrayItem(dateData.days[length]);
 
-export const month = (length: "long" | "short" | "num" = "long"): string =>
+export const month = (length: lengthT = "long"): string =>
   utils.randomArrayItem(dateData.months[length]);
 
 export const full = (
@@ -36,5 +38,41 @@ export const full = (
       throw new Error(
         "wrong date format. Select between: 'slash', 'dash', 'full'"
       );
+  }
+};
+
+export const custom = (
+  format: "YMd" | "dMY" | "MdY" | "ddMY" = "dMY",
+  separator: string = " ",
+  opt?: {
+    minYear?: number;
+    maxYear?: number;
+    day?: lengthT;
+    month?: lengthT;
+  }
+) => {
+  const customYear = year(opt?.minYear, opt?.maxYear);
+  const customMonth = month(opt?.month);
+  const customDay = day(opt?.day ? opt.day : "num");
+
+  switch (format) {
+    case "YMd":
+      return customYear + separator + customMonth + separator + customDay;
+    case "ddMY":
+      return (
+        day("long") +
+        separator +
+        day("num") +
+        separator +
+        customMonth +
+        separator +
+        customYear
+      );
+    case "dMY":
+      return customDay + separator + customMonth + separator + customYear;
+    case "MdY":
+      return customMonth + separator + customDay + separator + customYear;
+    default:
+      throw new Error("Wrong custom date format. Options are: YMd | dMY | MdY");
   }
 };
