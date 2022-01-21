@@ -37,19 +37,13 @@ const {user, lorem, image, address, date} = require("fakemeup/dist").default;
 ## Fake user
 
 ```Javascript
-// random first Name
-fakemeup.user.firstName()
-// random last name
-fakemeup.user.lastName()
-// random full name (first name + last name)
-fakemeup.user.fullName()
-// random email
+fakemeup.user.firstName() // random first Name
+fakemeup.user.lastName() // random last name
+fakemeup.user.fullName() // random full name (first name + last name)
 fakemeup.user.email() // picks a random fullname before @, eg: aaron.smith@gmail.com
 fakemeup.user.email("mystring") // passes your custom string before @, eg: mystring@hotmail.com
-// phone number
 fakemeup.user.phone() // renders a 10 digit phone number, eg: 34 87 90 21 65
-// user's random square avatar picture from https://pravatar.cc/
-fakemeup.user.avatar(300) // pass a size. Max size is 1000, eg: https://pravatar.cc/300?u=26538906 (random identifier after ?u=)
+fakemeup.user.avatar(300) // returns a square picture from https://pravatar.cc . Max size is 1000, eg: https://pravatar.cc/300?u=26538906 (random identifier after ?u=)
 fakemeup.user.avatar(600, "johnDoe") // you can pass a custom unique identifier, eg: https://pravatar.cc/600?u=johnDoe
 
 ```
@@ -57,9 +51,7 @@ fakemeup.user.avatar(600, "johnDoe") // you can pass a custom unique identifier,
 ## Lorem text
 
 ```Javascript
-// returns a whole paragraph
-fakemeup.lorem.paragraph()
-// returns one sentence
+fakemeup.lorem.paragraph() // returns a whole paragraph
 fakemeup.lorem.sentence(4, 8) // pass min and max number of words (first word capitalized by default)
 fakemeup.lorem.sentence(25, 35, false) // pass false as third argument to lowercase the first word
 fakemeup.lorem.sentence(1, 1) // returns one word, set min === max for a fixed number of words
@@ -68,7 +60,7 @@ fakemeup.lorem.sentence(1, 1) // returns one word, set min === max for a fixed n
 ## Dummy photo
 
 ```Javascript
-// get random photos from unsplash (no api key needed)
+// random photos from unsplash (no api key needed)
 fakemeup.image.random() // displays a random landscape photo 1280x720
 fakemeup.image.random("square") // 3 preset ratios: "square", "portrait", "landscape" (sizes are 1000x1000, 576x1024, 1280x720)
 fakemeup.image.random("250x420") // or any custom size "widthxheight"
@@ -78,12 +70,11 @@ fakemeup.image.random("portrait", "nature,purple") // optional, you can pass com
 ## Dummy address
 
 ```Javascript
-// US data based
 fakemeup.address.country()
-fakemeup.address.city()
-fakemeup.address.state()
+fakemeup.address.city() // US cities
+fakemeup.address.state() // US states
 fakemeup.address.way() // street, road, avenue, plaza ... etc
-fakemeup.address.street()
+fakemeup.address.street() // name of the street, road, ...
 fakemeup.address.number() // between 10 and 999
 fakemeup.address.postcode() // between 10000 and 99999
 fakemeup.address.fullAddress() // totally random, eg: 23 Albert Road, 34678 New-York, Mississipi FRANCE
