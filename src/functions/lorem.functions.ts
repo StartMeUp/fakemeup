@@ -1,7 +1,8 @@
 import * as loremData from "../data/lorem.data";
 import * as utils from "./utils.functions";
 
-export const paragraph = () => utils.randomArrayItem(loremData.paragraphs);
+export const paragraph = (): string =>
+  utils.randomArrayItem(loremData.paragraphs);
 
 export const sentence = (min: number, max: number, capitalize = true) => {
   if (min > max) throw new Error("Error min/max number of words");

@@ -5,11 +5,11 @@ export const country = () => utils.randomArrayItem(addressData.countries);
 
 export const city = () => utils.randomArrayItem(addressData.cities);
 
-export const state = () => utils.randomArrayItem(addressData.states);
+export const state = (): string => utils.randomArrayItem(addressData.states);
 
-export const way = () => utils.randomArrayItem(addressData.ways);
+export const way = (): string => utils.randomArrayItem(addressData.ways);
 
-export const street = () => utils.randomArrayItem(addressData.streets);
+export const street = (): string => utils.randomArrayItem(addressData.streets);
 
 export const number = () => utils.randomNumber(10, 999);
 
