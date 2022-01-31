@@ -124,4 +124,10 @@ fakemeup.date.custom("dMY", " ", { month: "short" }) // => 13 Apr. 1985
 fakemeup.date.custom("ddMY") // => Monday 05 February 2018
 fakemeup.date.custom("YMd", "-", { minYear: 2003, maxYear: 2005, month: "num" }) // => 2004-03-13
 
+//Numbers
+fakemeup.numbers.centsPrice() // returns cents between 0 and 9900
+fakemeup.numbers.centsPrice(50, 70) // => 6500,  optional min and max price * 100,
+fakemeup.numbers.floatPrice() // returns a price string between "0.00" and "99.00"
+fakemeup.numbers.floatPrice(50, 70) // => "65.00", optional min and max price
+
 ```

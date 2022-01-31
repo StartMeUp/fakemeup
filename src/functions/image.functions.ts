@@ -21,7 +21,8 @@ export const random = (ratio: string = "landscape", keyword?: string) => {
       size = "576x1024";
       break;
     default:
-      if (!customRatioCheck(ratio)) throw new Error("Wrong ratio syntax");
+      if (!customRatioCheck(ratio))
+        throw new Error("Wrong ratio syntax in image.random()");
       size = ratio;
   }
   return `${baseUrl}${size}${keyword ? "/?" + keyword : ""}`;
